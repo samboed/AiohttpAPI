@@ -1,0 +1,81 @@
+POST http://127.0.0.1:5000/user/create
+Content-Type: application/json
+
+{
+    "login": "my_login",
+    "password": "qwerty",
+    "email": "my_mail@mail.com",
+    "name": "Steave",
+    "last_name": "Jobs"
+}
+
+### 
+
+GET http://127.0.0.1:5000/user/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+
+###
+
+POST http://127.0.0.1:5000/login/
+Content-Type: application/json
+
+{
+    "login": "my_login",
+    "password": "qwerty"
+}
+
+###
+
+POST http://127.0.0.1:5000/ads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+Content-Type: application/json
+
+{
+    "title": "Ad #1"
+}
+
+###
+
+POST http://127.0.0.1:5000/ads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+Content-Type: application/json
+
+{
+    "title": "Ad #2"
+}
+
+###
+
+GET http://127.0.0.1:5000/ads
+
+###
+
+GET http://127.0.0.1:5000/ads/7
+
+###
+
+PATCH http://127.0.0.1:5000/ads/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+Content-Type: application/json
+
+{
+    "title": "new title Ad #1",
+    "description": "very good item"
+}
+
+###
+
+PUT http://127.0.0.1:5000/ads/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+Content-Type: application/json
+
+{
+    "title": "new title Ad #1"
+}
+
+###
+
+DELETE http://127.0.0.1:5000/ads/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+
+
