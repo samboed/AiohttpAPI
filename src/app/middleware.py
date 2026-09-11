@@ -1,12 +1,12 @@
 from aiohttp import web
 from jwt.exceptions import PyJWTError
 
-from src.db.models import Session
+from src.db import AsyncSession
 
 
 @web.middleware
 async def session_middleware(request: web.Request, handler):
-    with Session() as session:
+    async with AsyncSession() as session:
         request.session = session
         response = await handler(request)
 

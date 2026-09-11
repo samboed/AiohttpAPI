@@ -1,11 +1,12 @@
 from aiohttp import web
-from src.api.error import generate_error
-from src.db.models import User, Advertisement
-from src.api.serializer.schema.advertisement import (AdvertisementCreate,
-                                                     AdvertisementReplace,
-                                                     AdvertisementUpdate)
-from src.api.serializer.schema.user import (UserLogin, UserCreate,
-                                            UserReplace, UserUpdate)
+from src.app.error import generate_error
+from src.db.models.users import User
+from src.db.models.ads import Advertisement
+from src.app.serializer.schema.ads import (AdvertisementCreate,
+                                           AdvertisementReplace,
+                                           AdvertisementUpdate)
+from src.app.serializer.schema.users import (UserLogin, UserCreate,
+                                             UserReplace, UserUpdate)
 from pydantic import ValidationError
 
 

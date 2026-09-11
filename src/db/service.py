@@ -1,4 +1,3 @@
-import bcrypt
 from sqlalchemy import inspect
 
 
@@ -28,8 +27,3 @@ def update_item(instance, data: dict):
 
         if column.name in data:
             setattr(instance, column.name, data[column.name])
-
-
-def hash_password(raw_password: bytes) -> bytes:
-    salt = bcrypt.gensalt()
-    return bcrypt.hashpw(raw_password, salt)

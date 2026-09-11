@@ -1,4 +1,4 @@
-POST http://127.0.0.1:5000/user/create
+POST http://127.0.0.1:5000/api/v1/user
 Content-Type: application/json
 
 {
@@ -11,12 +11,12 @@ Content-Type: application/json
 
 ### 
 
-GET http://127.0.0.1:5000/user/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+GET http://127.0.0.1:5000/api/v1/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 
 ###
 
-POST http://127.0.0.1:5000/login/
+POST http://127.0.0.1:5000/login
 Content-Type: application/json
 
 {
@@ -26,8 +26,8 @@ Content-Type: application/json
 
 ###
 
-POST http://127.0.0.1:5000/ads
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+POST http://127.0.0.1:5000/api/v1/ads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 Content-Type: application/json
 
 {
@@ -36,8 +36,8 @@ Content-Type: application/json
 
 ###
 
-POST http://127.0.0.1:5000/ads
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+POST http://127.0.0.1:5000/api/v1/ads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 Content-Type: application/json
 
 {
@@ -46,16 +46,16 @@ Content-Type: application/json
 
 ###
 
-GET http://127.0.0.1:5000/ads
+GET http://127.0.0.1:5000/api/v1/ads
 
 ###
 
-GET http://127.0.0.1:5000/ads/7
+GET http://127.0.0.1:5000/api/v1/ads/9
 
 ###
 
-PATCH http://127.0.0.1:5000/ads/8
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+PATCH http://127.0.0.1:5000/api/v1/ads/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 Content-Type: application/json
 
 {
@@ -65,8 +65,8 @@ Content-Type: application/json
 
 ###
 
-PUT http://127.0.0.1:5000/ads/7
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+PUT http://127.0.0.1:5000/api/v1/ads/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 Content-Type: application/json
 
 {
@@ -75,7 +75,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://127.0.0.1:5000/ads/8
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MDc0Mjc3LCJpYXQiOjE3ODkwNzA2Nzd9._2-kSlC5kwiIYS34SpJ9JzjWICoyzyB-vWF7q1vq7Tg
+DELETE http://127.0.0.1:5000/api/v1/ads/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 
 

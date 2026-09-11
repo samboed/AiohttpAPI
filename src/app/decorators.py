@@ -2,8 +2,8 @@ from functools import wraps
 from aiohttp import web
 
 from src.db.repository import get_item
-from src.api.token import get_user_id_from_token
-from src.api.error import generate_error
+from src.app.token import get_user_id_from_token
+from src.app.error import generate_error
 
 
 def owner_required(msg='You can only edit your own'):
