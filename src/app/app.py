@@ -1,9 +1,9 @@
 from aiohttp import web
 from aiohttp_jwt import JWTMiddleware
 
-from src.app.middleware import (session_middleware,
-                                error_handler_middleware)
-from src.app.token import JWA
+from src.app.utils.middleware import (session_middleware,
+                                      error_handler_middleware)
+from src.app.utils.token import JWA
 from src.app.routes import setup_routes
 from src.db import init_orm, close_orm
 from src.config import JWT_SECRET_KEY

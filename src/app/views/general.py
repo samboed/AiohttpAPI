@@ -1,17 +1,21 @@
 from aiohttp import web
 
-from src.app.error import generate_error
-from src.app.serializer.validate import generate_validator
-from src.app.token import create_access_token
+from src.utils.error import generate_error
+from src.app.serializer.validate import UserValidator
+from src.app.utils.token import create_access_token
 from src.db.models.users import User
+from src.db.repository import get_item_by_filter
 
 
 async def login(request):
+    validator = UserValidator
+
     data = await request.json()
-    validator = generate_validator(User)
+
     validator.login(data)
-    user = request.session.query(User).filter_by(login=data['login']).first()
-    if user is None or not user.check_password(data['password']):
+
+    user = await get_item_by_filter(request.session, User, {'login': data['login']})
+    if not user or not user.check_password(data['password']):
         raise generate_error(web.HTTPUnauthorized,
                              'login or password are incorrect')
 

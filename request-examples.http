@@ -12,7 +12,7 @@ Content-Type: application/json
 ### 
 
 GET http://127.0.0.1:5000/api/v1/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzg5MjQwNzM2LCJpYXQiOjE3ODkyMzcxMzZ9.CwvF485BFtXbxOQTGpCkAWBJ-_4q4DUxf8zH-MFKcZU
 
 ###
 
@@ -27,8 +27,8 @@ Content-Type: application/json
 ###
 
 POST http://127.0.0.1:5000/api/v1/ads
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzg5MjQwNzM2LCJpYXQiOjE3ODkyMzcxMzZ9.CwvF485BFtXbxOQTGpCkAWBJ-_4q4DUxf8zH-MFKcZU
 
 {
     "title": "Ad #1"
@@ -37,8 +37,8 @@ Content-Type: application/json
 ###
 
 POST http://127.0.0.1:5000/api/v1/ads
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzg5MjQwNzM2LCJpYXQiOjE3ODkyMzcxMzZ9.CwvF485BFtXbxOQTGpCkAWBJ-_4q4DUxf8zH-MFKcZU
 
 {
     "title": "Ad #2"
@@ -50,13 +50,13 @@ GET http://127.0.0.1:5000/api/v1/ads
 
 ###
 
-GET http://127.0.0.1:5000/api/v1/ads/9
+GET http://127.0.0.1:5000/api/v1/ads/1
 
 ###
 
-PATCH http://127.0.0.1:5000/api/v1/ads/11
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
+PATCH http://127.0.0.1:5000/api/v1/ads/1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzg5MjQwNzM2LCJpYXQiOjE3ODkyMzcxMzZ9.CwvF485BFtXbxOQTGpCkAWBJ-_4q4DUxf8zH-MFKcZU
 
 {
     "title": "new title Ad #1",
@@ -65,9 +65,9 @@ Content-Type: application/json
 
 ###
 
-PUT http://127.0.0.1:5000/api/v1/ads/11
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
+PUT http://127.0.0.1:5000/api/v1/ads/1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzg5MjQwNzM2LCJpYXQiOjE3ODkyMzcxMzZ9.CwvF485BFtXbxOQTGpCkAWBJ-_4q4DUxf8zH-MFKcZU
 
 {
     "title": "new title Ad #1"
@@ -75,7 +75,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://127.0.0.1:5000/api/v1/ads/11
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzg5MTU3OTkyLCJpYXQiOjE3ODkxNTQzOTJ9.Hxi9nP8PS3oJF3hy1PW9IkfYQ-FikFDnHu0ix9BUMeQ
+DELETE http://127.0.0.1:5000/api/v1/ads/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzg5MjQwNzM2LCJpYXQiOjE3ODkyMzcxMzZ9.CwvF485BFtXbxOQTGpCkAWBJ-_4q4DUxf8zH-MFKcZU
 
 

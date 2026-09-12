@@ -1,13 +1,12 @@
 from aiohttp import web
-from src.app.error import generate_error
-from src.db.models.users import User
-from src.db.models.ads import Advertisement
+from pydantic import ValidationError
+
+from src.utils.error import generate_error
 from src.app.serializer.schema.ads import (AdvertisementCreate,
                                            AdvertisementReplace,
                                            AdvertisementUpdate)
 from src.app.serializer.schema.users import (UserLogin, UserCreate,
                                              UserReplace, UserUpdate)
-from pydantic import ValidationError
 
 
 def validate_model(data: dict, model):
@@ -17,7 +16,7 @@ def validate_model(data: dict, model):
         raise generate_error(web.HTTPBadRequest, ex.json())
 
 
-class UserValidation:
+class UserValidator:
     @staticmethod
     def login(data: dict):
         validate_model(data, UserLogin)
@@ -31,11 +30,11 @@ class UserValidation:
         validate_model(data, UserReplace)
 
     @staticmethod
-    def update(data: dict):
+    def modify(data: dict):
         validate_model(data, UserUpdate)
 
 
-class AdvertisementValidation:
+class AdvertisementValidator:
     @staticmethod
     def create(data: dict):
         validate_model(data, AdvertisementCreate)
@@ -45,13 +44,5 @@ class AdvertisementValidation:
         validate_model(data, AdvertisementReplace)
 
     @staticmethod
-    def update(data: dict):
+    def modify(data: dict):
         validate_model(data, AdvertisementUpdate)
-
-
-def generate_validator(model):
-    if model is User:
-        return UserValidation
-    elif model is Advertisement:
-        return AdvertisementValidation
-    return None

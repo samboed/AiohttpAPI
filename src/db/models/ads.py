@@ -20,7 +20,9 @@ class Advertisement(Base):
     owner: Mapped[User] = relationship(back_populates='advertisements')
 
     @property
-    def dict(self):
+    async def dict(self):
+        self.owner = await self.awaitable_attrs.owner
+
         return {
             'id': self.id,
             'title': self.title,

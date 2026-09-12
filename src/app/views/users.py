@@ -1,13 +1,13 @@
-from src.app.serializer.validate import generate_validator
-from src.app.views.patterns import BaseTokenItemView, BaseItemView
 from src.db.models.users import User
+from src.app.serializer.validate import UserValidator
+from src.app.utils.view.patterns import BaseTokenItemView, BaseItemView
 
 
 class UserTokenItemView(BaseTokenItemView):
     model = User
-    validator = generate_validator(User)
+    validator = UserValidator
 
 
 class UserItemView(BaseItemView):
     model = User
-    validator = generate_validator(User)
+    validator = UserValidator

@@ -1,11 +1,13 @@
 from aiohttp import web
+from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
+from typing import Any
 
-from src.app.error import generate_error
-from src.db import AsyncSession
+from src.utils.error import generate_error
+from src.db import AsyncSession, Base
 
 
-async def add_item(session: AsyncSession, item):
+async def add_item(session: type[AsyncSession], item: Base):
     session.add(item)
     try:
         await session.commit()
@@ -14,7 +16,13 @@ async def add_item(session: AsyncSession, item):
                              f'{item.__tablename__} already exist')
 
 
-async def get_item(session: AsyncSession, model, item_id):
+async def delete_item(session: type[AsyncSession], item: Base):
+    await session.delete(item)
+    await session.commit()
+
+
+async def get_item_by_id(session: type[AsyncSession], model: type[Base],
+                         item_id: int) -> Base:
     item = await session.get(model, item_id)
     if not item:
         raise generate_error(web.HTTPNotFound,
@@ -22,10 +30,18 @@ async def get_item(session: AsyncSession, model, item_id):
     return item
 
 
-async def get_group(session: AsyncSession, model):
-    return await session.query(model).all()
+async def get_item_by_filter(session: type[AsyncSession], model: type[Base],
+                             filter_by: dict[str, Any]) -> Base:
+    query = select(model).filter_by(**filter_by)
+
+    coro = await session.execute(query)
+
+    return coro.scalars().first()
 
 
-async def delete_item(session: AsyncSession, item):
-    await session.delete(item)
-    await session.commit()
+async def get_group(session: type[AsyncSession], model: type[Base]) -> list[Base]:
+    query = select(model)
+
+    coro = await session.scalars(query)
+
+    return coro.all()

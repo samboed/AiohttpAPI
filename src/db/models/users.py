@@ -1,13 +1,10 @@
-import bcrypt
-
 from sqlalchemy import String
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy_utils import EmailType
 
 from src.db.models import Base
-from src.permission import hash_password
-
+from src.utils.permission import hash_password, check_password
 
 class User(Base):
     __tablename__ = 'user'
@@ -31,7 +28,7 @@ class User(Base):
         self.password = password
 
     @property
-    def dict(self):
+    async def dict(self):
         return {
             'id': self.id,
             'name': self.name,
@@ -45,11 +42,7 @@ class User(Base):
 
     @password.setter
     def password(self, raw_password: str):
-        raw_password_bytes = raw_password.encode('utf-8')
-        hashed_password = hash_password(raw_password_bytes)
-        self._password = hashed_password.decode('utf-8')
+        self._password = hash_password(raw_password)
 
-    def check_password(self, check_password: str):
-        check_password_bytes = check_password.encode('utf-8')
-        hash_password = self._password.encode('utf-8')
-        return bcrypt.checkpw(check_password_bytes, hash_password)
+    def check_password(self, password: str):
+        return check_password(password, self._password)
