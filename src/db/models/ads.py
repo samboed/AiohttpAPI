@@ -1,10 +1,13 @@
 import datetime
 
+from typing import TYPE_CHECKING
 from sqlalchemy import String, Text, DateTime, func, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.db.models import Base
-from src.db.models.users import User
+
+if TYPE_CHECKING:
+    from src.db.models.users import User
 
 
 class Advertisement(Base):
@@ -17,7 +20,7 @@ class Advertisement(Base):
         mapped_column(DateTime, server_default=func.now()))
     owner_id = mapped_column(ForeignKey("user.id"), info={'no_update': True})
 
-    owner: Mapped[User] = relationship(back_populates='advertisements')
+    owner: Mapped['User'] = relationship(back_populates='advertisements')
 
     @property
     async def dict(self):

@@ -14,7 +14,8 @@ async def login(request):
 
     validator.login(data)
 
-    user = await get_item_by_filter(request.session, User, {'login': data['login']})
+    user = await get_item_by_filter(request.session, User,
+                                    {'login': data['login']})
     if not user or not user.check_password(data['password']):
         raise generate_error(web.HTTPUnauthorized,
                              'login or password are incorrect')

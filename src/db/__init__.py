@@ -1,6 +1,7 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-from src.config import DB_DRIVER, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME
+from src.config import (DB_DRIVER, DB_USER, DB_PASSWORD,
+                        DB_HOST, DB_PORT, DB_NAME)
 from src.db.models import Base
 
 

@@ -39,7 +39,8 @@ async def get_item_by_filter(session: type[AsyncSession], model: type[Base],
     return coro.scalars().first()
 
 
-async def get_group(session: type[AsyncSession], model: type[Base]) -> list[Base]:
+async def get_group(session: type[AsyncSession],
+                    model: type[Base]) -> list[Base]:
     query = select(model)
 
     coro = await session.scalars(query)

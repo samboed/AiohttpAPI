@@ -13,5 +13,3 @@ def setup_routes(app: web.Application):
     app.add_subapp('/api/v1', api)
 
     app.add_routes(general_routes)
-
-

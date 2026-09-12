@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+APP_HOST = os.getenv('APP_HOST')
+APP_PORT = int(os.getenv('APP_PORT'))
+
 DB_DRIVER = os.getenv('DB_DRIVER')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')

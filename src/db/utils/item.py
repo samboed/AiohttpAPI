@@ -7,9 +7,9 @@ def check_modification_column_right(column: Column):
     no_update = column.info.get('no_update', False)
 
     if (column.primary_key or
-        column.default or
-        column.server_default or
-        no_update):
+            column.default or
+            column.server_default or
+            no_update):
         return False
 
     return True

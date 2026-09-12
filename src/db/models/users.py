@@ -1,3 +1,4 @@
+from typing import TYPE_CHECKING
 from sqlalchemy import String
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -5,6 +6,10 @@ from sqlalchemy_utils import EmailType
 
 from src.db.models import Base
 from src.utils.permission import hash_password, check_password
+
+if TYPE_CHECKING:
+    from src.db.models.ads import Advertisement
+
 
 class User(Base):
     __tablename__ = 'user'
